@@ -102,3 +102,23 @@ for(i in 1:5){
 
 Just for the sake of curiosity, $W(1) = \Omega$. That is, the value of $x$ we have found, 0.567..., is named omega.
 
+## Fitting the progress curve for enzyme-catalyzed reactions
+
+Now that we know how to solve the  $S_t$ variable from equation (4) using the approach allowed by the Lambert W function (in the Enzymology field this is known as the Schnell-Mendoza equation), we will illustrate how the function **fE.progress**, which makes use of the Schnell-Mendoza equation, allows us to obtain, from one single progress curve, the kinetic parameters of the enzyme.
+
+Suppose we have obtained the following data for from a progression curve:
+
+```{r echo=FALSE}
+library(knitr)
+data <- data.frame(t = d$t[seq(1,100,5)], S = d$S_mean[seq(1,100,5)])
+kable(data)
+```
+
+If we use these data to build a dataframe call "data", then fE.progress(data) will fit the progression curve to estimate $K_m$ and $V_{max}$:
+
+```{r}
+fE.progress(data)
+```
+
+Note that for comparison purposes, this function also fits the linearized integrated equation
+

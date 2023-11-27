@@ -1,4 +1,4 @@
-## ---- include = FALSE---------------------------------------------------------
+## ----include = FALSE----------------------------------------------------------
 knitr::opts_chunk$set(
   collapse = TRUE,
   comment = "#>"
@@ -19,7 +19,7 @@ names(data) <- c('[S] (mM)', 'v (au)')
 kable(data)
 
 
-## ---- fig.align='center',out.extra='angle=90', echo=FALSE---------------------
+## ----fig.align='center',out.extra='angle=90', echo=FALSE----------------------
 plot(S, v, ty = 'b', ylim = c(0, Vm + 0.25*Vm), 
      ylab = 'v (au)', xlab = '[S] (mM)')
 abline(h = 74, lty = 2, col = 'blue')

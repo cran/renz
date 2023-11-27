@@ -1,4 +1,4 @@
-## ---- include = FALSE---------------------------------------------------------
+## ----include = FALSE----------------------------------------------------------
 knitr::opts_chunk$set(
   collapse = TRUE,
   comment = "#>"
@@ -21,4 +21,12 @@ for(i in 1:5){
   x <- x - (x*exp(x) -1)/(exp(x)*(1 + x))
   print(paste("iteration ", i, ":    x = ", x, ", y = ", x*exp(x), sep = ""))
 }
+
+## ----echo=FALSE---------------------------------------------------------------
+library(knitr)
+data <- data.frame(t = d$t[seq(1,100,5)], S = d$S_mean[seq(1,100,5)])
+kable(data)
+
+## -----------------------------------------------------------------------------
+fE.progress(data)
 

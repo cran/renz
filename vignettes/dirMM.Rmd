@@ -62,12 +62,12 @@ To find the kinetic parameters ($K_m$ and $V_{max}$) that minimize the SSQ, we w
 
 \begin{equation}
 \tag{3}
-\frac{\partial SSQ}{\partial V_{max}} = 0 = -2\sum_{i=1}^n[v_i - V_{max} \frac{[S]_i}{K_m + [S]_i}] [S]_i
+\frac{\partial SSQ}{\partial V_{max}} = 0 = -2\sum_{i=1}^n[v_i - V_{max} \frac{[S]_i}{K_m + [S]_i}] \frac{[S]_i}{K_m + [S]_i}
 \end{equation}
 
 \begin{equation}
 \tag{4}
-\frac{\partial SSQ}{\partial K_m} = 0 = -2\sum_{i=1}^n[v_i - V_{max} \frac{[S]_i}{K_m + [S]_i}] \frac{V_{max}[S]_i}{[S]_i + K_m}
+\frac{\partial SSQ}{\partial K_m} = 0 = -2\sum_{i=1}^n[v_i - V_{max} \frac{[S]_i}{K_m + [S]_i}] \frac{V_{max}[S]_i}{([S]_i + K_m)^2}
 \end{equation}
 
 To achieve such purpose, the function *dir.MM()* invokes numerical method well implemented into R.
